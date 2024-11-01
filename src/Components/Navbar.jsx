@@ -1,102 +1,101 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import OffCanvas from './Offcanvas';
+import OffCanvas from './OffCanvas'; // Pastikan Anda telah membuat komponen OffCanvas
 
-const Navbar = ({ toggleOffcanvas: toggleOffcanvasProp }) => {
-    const [isOffcanvasOpen, setOffcanvasOpen] = useState(false);
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
-    const handleToggleOffcanvas = () => {
-        setOffcanvasOpen(!isOffcanvasOpen);
-        toggleOffcanvasProp(); // Call the prop function if needed
+    const toggleOffCanvas = () => {
+      setIsOpen(!isOpen); // Mengubah status offcanvas
+      console.log("Offcanvas", !isOpen)
     };
 
-    // Example for handling search toggle, adjust as necessary
-    const [isSearchOpen, setSearchOpen] = useState(false);
-    const handleSearchToggle = () => {
-        setSearchOpen(!isSearchOpen);
+    const handleClose = () => {
+      setIsOpen(false); // Menutup offcanvas
     };
 
     return (
-        <>
-            <header id="theme-header-one" className="theme-header-main header-style-one">
-                <div className="theme-header-area">
-                    <div className="container mx-auto">
-                        <div className="flex items-center justify-between">
-                            <div className="w-1/4">
-                                <div className="logo theme-logo">
-                                    <Link to="/">
-                                        <img src="assets/media/logo.svg" alt="Logo" />
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="w-1/2">
-                                <nav className="nav-main-wrap">
-                                    <ul className="theme-navigation-wrap theme-main-menu flex space-x-4">
-                                        <li><Link to="/">Home</Link></li>
-                                        <li className="relative group">
-                                            <Link to="#">Features</Link>
-                                            <ul className="dropdown sub-menu absolute left-0 hidden group-hover:block bg-white shadow-lg">
-                                                <li><Link to="/blog-category">Category Page</Link></li>
-                                                <li className="relative group">
-                                                    <Link to="/blog">Blog Page</Link>
-                                                    <ul className="dropdown sub-menu absolute left-full top-0 hidden group-hover:block bg-white shadow-lg">
-                                                        <li><Link to="/blog">Blog List</Link></li>
-                                                        <li><Link to="/blog-grid">Blog Grid</Link></li>
-                                                    </ul>
-                                                </li>
-                                                <li><Link to="/post-single">Blog Single</Link></li>
-                                                <li><Link to="/about">About Page</Link></li>
-                                                <li><Link to="/contact">Contact Us</Link></li>
-                                            </ul>
-                                        </li>
-                                        <li><Link to="/fashion">Fashion</Link></li>
-                                        <li><Link to="/lifestyle">Lifestyle</Link></li>
-                                        <li><Link to="/travel">Travel</Link></li>
-                                        <li><Link to="/contact">Contact</Link></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div className="w-1/4 flex items-center justify-end space-x-4">
-                                <div className="relative">
-                                    <div
-                                        className="search-icon theme-search-custom-iconn cursor-pointer"
-                                        onClick={handleSearchToggle}
-                                    >
-                                        <i className="icofont-search-1"></i>
-                                    </div>
-                                    {isSearchOpen && (
-                                        <div className="absolute right-0 theme-serach-box_inner_wrapper bg-white shadow-lg">
-                                            <form role="search" method="get" id="searchform" className="search-form" action="#">
-                                                <input
-                                                    type="text"
-                                                    className="search-input border p-2"
-                                                    name="s"
-                                                    placeholder="Type keywords here....."
-                                                />
-                                                <button type="submit" className="search-button submit-btn">
-                                                    <i className="icofont-search-1"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    )}
-                                </div>
-                                <div className="header-subscribe">
-                                    <Link to="/subscribe" className="subscribe-btn">Subscribe</Link>
-                                </div>
-                                <div className="header-burger-menu">
-                                    <div className="burger-nav-bar">
-                                        <button className="tp-header__bars tp-menu-bar" onClick={handleToggleOffcanvas}>
-                                            <i className="ri-menu-fill"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <>
+        <header id="theme-header-one" className="bg-black shadow-md">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between py-4">
+              {/* Logo */}
+              <div className="w-1/7">
+                <Link to="/" className="flex items-center">
+                  <img src="/assets/01.png" alt="Logo" className="h-12" />
+                </Link>
+              </div>
+
+              {/* Navigation */}
+              <nav className="hidden lg:flex w-3/5 mt-3">
+                <ul className="flex space-x-6 mt-2 gap-2 font-bold mb-6">
+                  <li><Link to="/" className="text-white hover:text-blue-500 no-underline">Home</Link></li>
+                  <li className="relative group">
+                    <button className="text-white hover:text-blue-500">Features</button>
+                    <ul className="absolute left-0 hidden mt-8 space-y-2 bg-white border border-gray-200 rounded-md shadow-lg group-hover:block">
+                      <li>
+                        <Link to="/blog-category" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Category Page</Link>
+                      </li>
+                      <div className="border-t border-gray-200"></div>
+                      <li className="relative group">
+                        <button className="block w-full px-4 py-2 text-left text-black hover:text-blue-500 no-underline">Blog Page</button>
+                        <ul className="absolute left-full top-0 hidden mt-2 space-y-2 bg-white border border-gray-200 rounded-md shadow-lg group-hover:block">
+                          <li><Link to="/blog" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Blog List</Link></li>
+                          <li><Link to="/blog-grid" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Blog Grid</Link></li>
+                        </ul>
+                      </li>
+                      <div className="border-t border-gray-200"></div>
+                      <li><Link to="/post-single" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Blog Single</Link></li>
+                      <div className="border-t border-gray-200"></div>
+                      <li><Link to="/about" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">About Page</Link></li>
+                      <div className="border-t border-gray-200"></div>
+                      <li><Link to="/contact" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Contact Us</Link></li>
+                    </ul>
+                  </li>
+                  <li><Link to="/fashion" className="text-white hover:text-blue-500 no-underline">Fashion</Link></li>
+                  <li><Link to="/lifestyle" className="text-white hover:text-blue-500 no-underline">Lifestyle</Link></li>
+                  <li><Link to="/travel" className="text-white hover:text-blue-500 no-underline">Travel</Link></li>
+                  <li><Link to="/contact" className="text-white hover:text-red-500 no-underline">Contact</Link></li>
+                </ul>
+              </nav>
+
+              {/* Header Right */}
+              <div className="flex items-center space-x-4 w-1/5 justify-end">
+                {/* Search Icon */}
+                <div className="relative flex items-center">
+                  <button className="text-gray-600 hover:text-blue-500 focus:outline-none">
+                    <i className="icofont-search-1 text-xl"></i>
+                  </button>
+                  <div className="absolute right-0 hidden mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-lg">
+                    <form className="flex items-center">
+                      <input
+                        type="text"
+                        className="w-full px-2 py-1 border rounded-md focus:outline-none"
+                        placeholder="Type keywords here..."
+                      />
+                      <button type="submit" className="ml-2 text-blue-500">
+                        <i className="icofont-search-1"></i>
+                      </button>
+                    </form>
+                  </div>
                 </div>
-            </header>
-            <OffCanvas isOpen={isOffcanvasOpen} toggleOffcanvas={handleToggleOffcanvas} />
-        </>
+                {/* Subscribe Button */}
+                <Link to="/subscribe" className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                  Subscribe
+                </Link>
+                {/* Hamburger Menu */}
+                <button onClick={toggleOffCanvas} className="text-gray-600 hover:text-blue-500">
+                  <i className="ri-menu-fill text-2xl"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* OffCanvas Component */}
+        {isOpen && <OffCanvas isOpen={isOpen} onClose={handleClose} />}
+        
+      </>
     );
 };
 

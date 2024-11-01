@@ -1,180 +1,111 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-const articles = [
-  {
-    title: "Michelle Tea’s Punk Parenting Memoir",
-    image: "assets/media/team-mate.jpg",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html"
-  },
-  {
-    title: "A Design Lover's Guide Mexico City",
-    image: "assets/media/team-mate.jpg",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html"
-  },
-  {
-    title: "Education vs. Fuel: a lose-lose situation",
-    image: "assets/media/model-glass.jpg",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html"
-  },
-  {
-    title: "Maddie Ziegler Takes a Lie Detector Test",
-    image: "assets/media/model-glass.jpg",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html"
-  },
-  {
-    title: "Georgia’s voting law will make elections easier than ever",
-    image: "assets/media/red-woman.jpg",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html",
-    excerpt: "Tuesday’s primary is the first big test of the legislation, which was opposed by voting rights groups and Democrats."
-  },
-  {
-    title: "Should your architecture practice be employed",
-    image: "assets/media/red-woman.jpg",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html",
-    excerpt: "Tuesday’s primary is the first big test of the legislation, which was opposed by voting rights groups and Democrats."
-  }
-];
-
-const todaysPick = [
-  {
-    title: "Corporations Are People, Too",
-    image: "assets/media/yellow-diva.jpg",
-    author: "Alisson",
-    date: "Sep 22",
-    category: "Politics",
-    link: "post-single.html"
-  },
-  {
-    title: "The UX design trends 2023",
-    image: "assets/media/green-diva.jpg",
-    author: "Tony Stark",
-    date: "Sep 22",
-    category: "Lifestyle",
-    link: "post-single.html"
-  },
-  {
-    title: "Five signs of smart person",
-    image: "assets/media/hair-style.jpg",
-    author: "Tony Stark",
-    date: "Sep 22",
-    category: "Lifestyle",
-    link: "post-single.html"
-  }
-];
 
 const BlogHeroArea = () => {
   return (
-    <section className="blog-hero-area mt-30">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3">
-            {articles.slice(0, 4).map((article, index) => (
-              <article key={index} className="post-block-style-wrapper post-block-template-one post-block-template-small">
+    <section className="blog-hero-area mt-8">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap">
+          {/* Kolom Kiri */}
+          <div className="lg:w-1/4 w-full p-4 mt-3">
+            {/* Artikel Card */}
+            {[1, 2, 3, 4].map((_, index) => (
+              <article
+                key={index}
+                className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden mb-4"
+              >
                 <div className="post-block-style-inner">
                   <div className="post-block-media-wrap">
-                    <Link to={article.link}>
-                      <img src={article.image} alt="Post title" />
-                    </Link>
+                    <a href="post-single.html">
+                      <img src="/assets/01.png" alt="Post title" className="w-full h-45 object-cover" />
+                    </a>
                   </div>
-                  <div className="post-block-content-wrap">
+                  <div className="post-block-content-wrap p-4">
                     <div className="post-item-title">
-                      <h2 className="post-title">
-                        <Link to={article.link}>{article.title}</Link>
+                      <h2 className="post-title text-lg font-semibold">
+                        <a href="post-single.html">Michelle Tea’s Punk Parenting Memoir</a>
                       </h2>
                     </div>
-                    <div className="post-bottom-meta-list">
+                    <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <Link to="#">{article.author}</Link>
+                        By <a href="javascript:void(0)" className="text-blue-400">Laura Tanenbaum</a>
                       </div>
-                      <div className="post-meta-date-box">{article.date}</div>
+                      <div className="post-meta-date-box">Sep 22</div>
                     </div>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          <div className="col-lg-6">
-            {articles.slice(4).map((article, index) => (
-              <article key={index} className="post-block-style-wrapper post-block-template-one sm-mt-24">
+
+          {/* Kolom Tengah */}
+          <div className="lg:w-2/4 w-full mt-7">
+            {[1, 2].map((_, index) => (
+              <article
+                key={index}
+                className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden mb-4"
+              >
                 <div className="post-block-style-inner">
                   <div className="post-block-media-wrap">
-                    <Link to={article.link}>
-                      <img src={article.image} alt="Post title" />
-                    </Link>
+                    <a href="post-single.html">
+                      <img src="/assets/02.png" alt="Post title" className="w-full h-64 object-cover" />
+                    </a>
                   </div>
-                  <div className="post-block-content-wrap">
+                  <div className="post-block-content-wrap p-4">
                     <div className="post-item-title">
-                      <h2 className="post-title">
-                        <Link to={article.link}>{article.title}</Link>
+                      <h2 className="post-title text-xl font-semibold">
+                        <a href="post-single.html">Georgia’s voting law will make elections easier than ever</a>
                       </h2>
                     </div>
-                    {article.excerpt && (
-                      <div className="post-excerpt-box">
-                        <p>{article.excerpt}</p>
-                      </div>
-                    )}
-                    <div className="post-bottom-meta-list">
+                    <div className="post-excerpt-box my-2 text-gray-300">
+                      <p>Tuesday’s primary is the first big test of the legislation, which was opposed by voting rights groups and Democrats.</p>
+                    </div>
+                    <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <Link to="#">{article.author}</Link>
+                        By <a href="javascript:void(0)" className="text-blue-400">Laura Tanenbaum</a>
                       </div>
-                      <div className="post-meta-date-box">{article.date}</div>
+                      <div className="post-meta-date-box">Sep 22</div>
                     </div>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          <div className="col-lg-3">
-            <div className="section-title sm-mt-24">
-              <h2 className="title-block">Todays Pick</h2>
+
+          {/* Kolom Kanan */}
+          <div className="lg:w-1/4 w-full p-4">
+            <div className="section-title sm:mt-6 mb-4">
+              <h2 className="title-block text-white">Todays Pick</h2>
             </div>
-            <div className="post-block-template-two-wrapper">
-              {todaysPick.map((pick, index) => (
-                <article key={index} className="post-block-style-wrapper post-block-template-two">
-                  <div className="post-block-style-inner post-block-list-style-inner">
-                    <div className="post-block-media-wrap">
-                      <Link to={pick.link}>
-                        <img src={pick.image} alt="Post title" />
-                      </Link>
+            {[1, 2, 3].map((_, index) => (
+              <article
+                key={index}
+                className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden mb-4"
+              >
+                <div className="post-block-style-inner post-block-list-style-inner">
+                  <div className="post-block-media-wrap">
+                    <a href="post-single.html">
+                      <img src="/assets/01.png" alt="Post title" className="w-full h-45 object-cover" />
+                    </a>
+                  </div>
+                  <div className="post-block-content-wrap p-4">
+                    <div className="post-category-box mb-1">
+                      <a className="post-cat-item text-blue-400" href="blog-category.html">Politics</a>
                     </div>
-                    <div className="post-block-content-wrap">
-                      <div className="post-category-box">
-                        <Link className="post-cat-item" to="blog-category.html">{pick.category}</Link>
+                    <div className="post-item-title">
+                      <h2 className="post-title text-lg font-semibold">
+                        <a href="post-single.html">Corporations Are People, Too</a>
+                      </h2>
+                    </div>
+                    <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
+                      <div className="post-meta-author-box">
+                        <a href="javascript:void(0)" className="text-blue-400">Alisson</a>
                       </div>
-                      <div className="post-item-title">
-                        <h2 className="post-title">
-                          <Link to={pick.link}>{pick.title}</Link>
-                        </h2>
-                      </div>
-                      <div className="post-bottom-meta-list">
-                        <div className="post-meta-author-box">
-                          <Link to="#">{pick.author}</Link>
-                        </div>
-                        <div className="post-meta-date-box">{pick.date}</div>
-                      </div>
+                      <div className="post-meta-date-box">Sep 22</div>
                     </div>
                   </div>
-                </article>
-              ))}
-            </div>
-            <div className="ads-widget mt-40">
-              <Link to="post-single.html">
-                <img src="assets/media/ads-sidebar.png" alt="Advertisement" />
-              </Link>
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

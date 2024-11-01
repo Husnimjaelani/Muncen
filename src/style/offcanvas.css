@@ -1,0 +1,31 @@
+.tp-offcanvas-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px; /* Atur lebar sesuai kebutuhan */
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .tpoffcanvas {
+    padding: 20px;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333; /* Atur warna sesuai kebutuhan */
+  }
+  
+  /* Efek Animasi */
+  .show {
+    transform: translateX(0);
+  }
+  
+  .hide {
+    transform: translateX(100%);
+  }
+  
