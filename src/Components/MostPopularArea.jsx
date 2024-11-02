@@ -3,153 +3,97 @@ import React from 'react';
 const MostPopularArea = () => {
   const articles = [
     {
-      title: "Every day, in every city and town across the country",
+      title: "Georgia’s voting law will make elections easier than ever",
+      excerpt: "Tuesday’s primary is the first big test of the legislation, which was opposed by voting rights groups and Democrats.",
       author: "Laura Tanenbaum",
       date: "Sep 22",
-      excerpt:
-        "The major oil-producing state has long tried to have it both ways regulating emissions.",
-      image: "assets/media/headphone-girl.jpg",
-      link: "post-single.html",
+      image: "/assets/02.png",
+      isFeatured: true,
     },
     {
-      title: "I work best when my space is filled with inspiration",
-      author: "Cristiano",
+      title: "Corporations Are People, Too",
+      excerpt: "Tuesday’s primary is the first big test of the legislation, which was opposed by voting rights groups and Democrats.",
+      author: "Alisson",
       date: "Sep 22",
-      excerpt: "Australians have just learned their election will be held on 21 May.",
-      image: "assets/media/office.jpg",
-      link: "post-single.html",
-    },
-    {
-      title: "It’s a new era in design, there are no rules",
-      author: "Cristiano",
-      date: "Sep 22",
-      excerpt: "Anelle, don’t look down. revere the sun. watch it make a shallow arc.",
-      image: "assets/media/paint.jpg",
-      link: "post-single.html",
-    },
-  ];
-
-  const popularPosts = [
-    {
-      number: 1,
-      title: "Urban green revivo oversized blazer",
-      author: "Laura Tanenbaum",
-      date: "Sep 22",
-      link: "post-single.html",
-    },
-    {
-      number: 2,
-      title: "Varsity brown bomber jacket in tan",
-      author: "Laura Tanenbaum",
-      date: "Sep 22",
-      link: "post-single.html",
-    },
-    {
-      number: 3,
-      title: "Blossom is an incredibly easy method",
-      author: "Laura Tanenbaum",
-      date: "Sep 22",
-      link: "post-single.html",
+      image: "/assets/01.png",
+      category: "Politics",
+      isFeatured: false,
     },
   ];
 
   return (
-    <section className="most-popular-area mt-12">
+    <section className="blog-hero-area mt-2">
       <div className="container mx-auto">
-        <div className="row mb-8">
-          <div className="col-lg-12">
-            <div className="section-title text-center">
-              <h2 className="text-3xl font-semibold">Most Popular</h2>
-            </div>
-          </div>
-        </div>
-        <div className="row mb-12">
-          <div className="col-lg-5">
-            <article className="post-block-style-wrapper mb-6">
-              <div className="post-block-style-inner">
-                <div className="post-block-media-wrap mb-4">
-                  <a href={articles[0].link}>
-                    <img src={articles[0].image} alt={articles[0].title} className="w-full" />
-                  </a>
-                </div>
-                <div className="post-block-content-wrap">
-                  <div className="post-item-title mb-2">
-                    <h2 className="text-xl font-medium">
-                      <a href={articles[0].link}>{articles[0].title}</a>
-                    </h2>
-                  </div>
-                  <div className="post-excerpt-box mb-2">
-                    <p>{articles[0].excerpt}</p>
-                  </div>
-                  <div className="post-bottom-meta-list flex space-x-4 text-sm">
-                    <div className="post-meta-author-box">
-                      By <a href="javascript:void(0)">{articles[0].author}</a>
+        <div className="flex flex-wrap">
+          {/* Kolom Tengah untuk Artikel Utama */}
+          <div className="lg:w-2/4 w-full mt-7">
+            {articles
+              .filter(article => article.isFeatured)
+              .map((article, index) => (
+                <article key={index} className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden mb-4">
+                  <div className="post-block-style-inner">
+                    <div className="post-block-media-wrap">
+                      <a href="post-single.html">
+                        <img src={article.image} alt={article.title} className="w-full h-70 object-cover" />
+                      </a>
                     </div>
-                    <div className="post-meta-date-box">{articles[0].date}</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div className="col-lg-7">
-            {articles.slice(1).map((article, index) => (
-              <article key={index} className="post-block-style-wrapper mb-6">
-                <div className="post-block-style-inner flex">
-                  <div className="post-block-content-wrap mr-4 flex-1">
-                    <div className="post-item-title mb-2">
-                      <h2 className="text-xl font-medium">
-                        <a href={article.link}>{article.title}</a>
-                      </h2>
-                    </div>
-                    <div className="post-excerpt-box mb-2">
-                      <p>{article.excerpt}</p>
-                    </div>
-                    <div className="post-bottom-meta-list flex space-x-4 text-sm">
-                      <div className="post-meta-author-box">
-                        By <a href="javascript:void(0)">{article.author}</a>
-                      </div>
-                      <div className="post-meta-date-box">{article.date}</div>
-                    </div>
-                  </div>
-                  <div className="post-block-media-wrap w-1/3">
-                    <a href={article.link}>
-                      <img src={article.image} alt={article.title} className="w-full" />
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-        <div className="row border-t border-gray-200 pt-8">
-          {popularPosts.map((post, index) => (
-            <div key={index} className="col-lg-4">
-              <div className="post-block-template-three-wrapper mb-6">
-                <article className="post-block-style-wrapper">
-                  <div className="post-block-style-inner flex">
-                    <div className="post-block-number-wrap pr-4">
-                      <span className="post-number-counter text-3xl font-semibold">
-                        {post.number}
-                      </span>
-                    </div>
-                    <div className="post-block-content-wrap flex-1">
-                      <div className="post-item-title mb-2">
-                        <h2 className="text-lg font-medium">
-                          <a href={post.link}>{post.title}</a>
+                    <div className="post-block-content-wrap p-4">
+                      <div className="post-item-title">
+                        <h2 className="post-title text-2xl font-semibold">
+                          <a href="post-single.html">{article.title}</a>
                         </h2>
                       </div>
-                      <div className="post-bottom-meta-list flex space-x-4 text-sm">
+                      <div className="post-excerpt-box my-2 text-gray-300">
+                        <p>{article.excerpt}</p>
+                      </div>
+                      <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                         <div className="post-meta-author-box">
-                          By <a href="javascript:void(0)">{post.author}</a>
+                          By <a href="javascript:void(0)" className="text-blue-400">{article.author}</a>
                         </div>
-                        <div className="post-meta-date-box">{post.date}</div>
+                        <div className="post-meta-date-box">{article.date}</div>
                       </div>
                     </div>
                   </div>
                 </article>
-              </div>
+              ))}
+          </div>
+
+{/* Kolom Kanan untuk Artikel Sampingan dengan Gambar di Kanan */}
+<div className="lg:w-1/2 w-full p-6 mt-1">
+  {articles
+    .filter(article => !article.isFeatured)
+    .map((article, index) => (
+      <article key={index} className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden mb-4 flex">
+        <div className="post-block-content-wrap p-4 flex-1 flex flex-col justify-center">
+          {article.category && (
+            <div className="post-category-box mb-1">
+              <a className="post-cat-item text-blue-400" href="blog-category.html">{article.category}</a>
             </div>
-          ))}
+          )}
+          <div className="post-item-title">
+            <h2 className="post-title text-lg font-semibold">
+              <a href="post-single.html">{article.title}</a>
+            </h2>
+          </div>
+          <div className="post-excerpt-box my-2 text-gray-300">
+            <p>{article.excerpt}</p>
+          </div>
+          <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
+            <div className="post-meta-author-box">
+              <a href="javascript:void(0)" className="text-blue-400">{article.author}</a>
+            </div>
+            <div className="post-meta-date-box">{article.date}</div>
+          </div>
+        </div>
+        <div className="post-block-media-wrap flex items-center justify-center w-1/3"> {/* Menentukan lebar gambar */}
+          <a href="post-single.html">
+            <img src={article.image} alt={article.title} className="w-full h-auto object-cover" /> {/* Mengubah ukuran gambar */}
+          </a>
+        </div>
+      </article>
+    ))}
+</div>
+
         </div>
       </div>
     </section>

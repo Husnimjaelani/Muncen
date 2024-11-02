@@ -1,76 +1,74 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-const todaysPickArticles = [
-  {
-    title: "Our company creates with a hobby",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html",
-    number: 1
-  },
-  {
-    title: "Sayaka Murata Inhabits a Planet of Her Own",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html",
-    number: 2
-  },
-  {
-    title: "Flutter: the good, bad and the ugly",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    link: "post-single.html",
-    number: 3
-  }
-];
-
-const mostRecentArticles = [
-  {
-    title: "The Complicity of the Textbooks",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    excerpt: "In Teaching White Supremacy, Donald Yacovone traces how the writing",
-    image: "assets/media/cafe.jpg",
-    link: "post-single.html"
-  },
-  {
-    title: "When walking, I keep my eyes straight ahead",
-    author: "Laura Tanenbaum",
-    date: "Sep 22",
-    excerpt: "Anelle, don’t look down. revere the sun. watch it make a shallow arc, skimming like a stone",
-    image: "assets/media/red-girl.jpg",
-    link: "post-single.html"
-  }
-];
 
 const EditorChoiceArea = () => {
+  const todaysPickData = [
+    {
+      title: "Sayaka Murata Inhabits a Planet of Her Own",
+      author: "Laura Tanenbaum",
+      date: "Sep 22",
+      number: 1,
+    },
+    {
+      title: "Sayaka Murata Inhabits a Planet of Her Own",
+      author: "Laura Tanenbaum",
+      date: "Sep 22",
+      number: 2,
+    },
+    {
+      title: "Sayaka Murata Inhabits a Planet of Her Own",
+      author: "Laura Tanenbaum",
+      date: "Sep 22",
+      number: 3,
+    },
+  ];
+
+  const mostRecentData = [
+    {
+      title: "The Complicity of the Textbooks",
+      author: "Laura Tanenbaum",
+      date: "Sep 22",
+      image: "01.png",
+      description: "In Teaching White Supremacy, Donald Yacovone traces how the writing",
+    },
+    {
+      title: "When walking, I keep my eyes straight ahead",
+      author: "Laura Tanenbaum",
+      date: "Sep 22",
+      image: "01.png",
+      description: "Anelle, don’t look down. revere the sun. watch it make a shallow arc, skimming like a stone",
+    },
+  ];
+
   return (
-    <section className="editor-choice-one-area">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4">
-            <div className="section-title">
-              <h2 className="title-block">Todays Pick</h2>
+    <section className="editor-choice-one-area py-3">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap">
+          {/* Kolom Kiri - Todays Pick */}
+          <div className="lg:w-1/3 w-full p-5">
+            <div className="section-title mb-5">
+              <h2 className="title-block text-white">Todays Pick</h2>
             </div>
             <div className="post-block-template-three-wrapper">
-              {todaysPickArticles.map((article, index) => (
-                <article key={index} className="post-block-style-wrapper post-block-template-three">
-                  <div className="post-block-style-inner post-block-list-style-inner-three">
-                    <div className="post-block-number-wrap">
-                      <span className="post-number-counter">{article.number}</span>
+              {todaysPickData.map((post) => (
+                <article
+                  key={post.number}
+                  className="post-block-style-wrapper bg-transparent border-b border-white last:border-b-0 mb-4 pb-4"
+                >
+                  <div className="post-block-style-inner post-block-list-style-inner-three flex">
+                    <div className="post-block-number-wrap flex items-center justify-center w-20 rounded-full mr-4">
+                      <span className="post-number-counter text-3xl text-white">{post.number}</span>
                     </div>
                     <div className="post-block-content-wrap">
                       <div className="post-item-title">
-                        <h2 className="post-title">
-                          <Link to={article.link}>{article.title}</Link>
+                        <h2 className="post-title text-xl font-semibold">
+                          <a href="post-single.html" className="text-white hover:text-blue-400">{post.title}</a>
                         </h2>
                       </div>
-                      <div className="post-bottom-meta-list">
+                      <div className="post-bottom-meta-list flex justify-start mt-2 gap-4 text-sm text-gray-400 mb-2">
                         <div className="post-meta-author-box">
-                          By <Link to="#">{article.author}</Link>
+                          By <a href="#" className="text-blue-400">{post.author}</a>
                         </div>
-                        <div className="post-meta-date-box">{article.date}</div>
+                        <div className="post-meta-date-box">{post.date}</div>
                       </div>
                     </div>
                   </div>
@@ -78,39 +76,39 @@ const EditorChoiceArea = () => {
               ))}
             </div>
           </div>
-          <div className="col-lg-8 most-recent-col-custom">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="section-title">
-                  <h2 className="title-block">Most Recent</h2>
-                </div>
-              </div>
+
+          {/* Kolom Kanan - Most Recent */}
+          <div className="lg:w-2/3 w-full p-4">
+            <div className="section-title mb-4">
+              <h2 className="title-block text-white">Most Recent</h2>
             </div>
-            <div className="row">
-              {mostRecentArticles.map((article, index) => (
-                <div key={index} className="col-lg-6">
-                  <article className="post-block-style-wrapper post-block-template-one post-block-template-medium">
-                    <div className="post-block-style-inner">
-                      <div className="post-block-media-wrap">
-                        <Link to={article.link}>
-                          <img src={article.image} alt="Post title" />
-                        </Link>
+            <div className="flex flex-wrap -mx-4">
+              {mostRecentData.map((post, index) => (
+                <div key={index} className="w-full md:w-1/2 px-4 mb-8">
+                  <article className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="post-block-media-wrap">
+                      <a href="post-single.html">
+                        <img
+                          src={`/assets/${post.image}`}
+                          alt={post.title}
+                          className="w-full h-65 object-cover"
+                        />
+                      </a>
+                    </div>
+                    <div className="post-block-content-wrap p-4">
+                      <div className="post-item-title">
+                        <h2 className="post-title text-xl font-semibold">
+                          <a href="post-single.html" className="hover:text-blue-400">{post.title}</a>
+                        </h2>
                       </div>
-                      <div className="post-block-content-wrap">
-                        <div className="post-item-title">
-                          <h2 className="post-title">
-                            <Link to={article.link}>{article.title}</Link>
-                          </h2>
+                      <div className="post-excerpt-box my-2 text-gray-300">
+                        <p>{post.description}</p>
+                      </div>
+                      <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
+                        <div className="post-meta-author-box">
+                          By <a href="#" className="text-blue-400">{post.author}</a>
                         </div>
-                        <div className="post-excerpt-box">
-                          <p>{article.excerpt}</p>
-                        </div>
-                        <div className="post-bottom-meta-list">
-                          <div className="post-meta-author-box">
-                            By <Link to="#">{article.author}</Link>
-                          </div>
-                          <div className="post-meta-date-box">{article.date}</div>
-                        </div>
+                        <div className="post-meta-date-box">{post.date}</div>
                       </div>
                     </div>
                   </article>
@@ -121,7 +119,7 @@ const EditorChoiceArea = () => {
         </div>
       </div>
     </section>
-  )
+  );
 };
 
 export default EditorChoiceArea;

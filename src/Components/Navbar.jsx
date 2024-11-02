@@ -16,12 +16,12 @@ const Navbar = () => {
 
     return (
       <>
-        <header id="theme-header-one" className="bg-black shadow-md">
+        <header id="theme-header-one" className="bg-black shadow-md border-b border-white">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between py-4">
               {/* Logo */}
               <div className="w-1/7">
-                <Link to="/" className="flex items-center">
+                <Link to="/home" className="flex items-center">
                   <img src="/assets/01.png" alt="Logo" className="h-12" />
                 </Link>
               </div>
@@ -29,7 +29,7 @@ const Navbar = () => {
               {/* Navigation */}
               <nav className="hidden lg:flex w-3/5 mt-3">
                 <ul className="flex space-x-6 mt-2 gap-2 font-bold mb-6">
-                  <li><Link to="/" className="text-white hover:text-blue-500 no-underline">Home</Link></li>
+                  <li><Link to="/home" className="text-white hover:text-blue-500 no-underline">Home</Link></li>
                   <li className="relative group">
                     <button className="text-white hover:text-blue-500">Features</button>
                     <ul className="absolute left-0 hidden mt-8 space-y-2 bg-white border border-gray-200 rounded-md shadow-lg group-hover:block">
@@ -49,7 +49,7 @@ const Navbar = () => {
                       <div className="border-t border-gray-200"></div>
                       <li><Link to="/about" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">About Page</Link></li>
                       <div className="border-t border-gray-200"></div>
-                      <li><Link to="/contact" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Contact Us</Link></li>
+                      <li><Link to="/Contact" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Contact Us</Link></li>
                     </ul>
                   </li>
                   <li><Link to="/fashion" className="text-white hover:text-blue-500 no-underline">Fashion</Link></li>

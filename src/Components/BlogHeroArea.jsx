@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // pastikan import ini ada
+import SectionDivider from './SectionDevinder';
 
 const BlogHeroArea = () => {
   return (
-    <section className="blog-hero-area mt-8">
+    <section className="blog-hero-area mt-2">
       <div className="container mx-auto">
         <div className="flex flex-wrap">
           {/* Kolom Kiri */}
@@ -15,19 +17,19 @@ const BlogHeroArea = () => {
               >
                 <div className="post-block-style-inner">
                   <div className="post-block-media-wrap">
-                    <a href="post-single.html">
+                    <Link to="/postsinglepage">
                       <img src="/assets/01.png" alt="Post title" className="w-full h-45 object-cover" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="post-block-content-wrap p-4">
                     <div className="post-item-title">
                       <h2 className="post-title text-lg font-semibold">
-                        <a href="post-single.html">Michelle Tea’s Punk Parenting Memoir</a>
+                        <Link to="/postsinglepage">Michelle Tea’s Punk Parenting Memoir</Link>
                       </h2>
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <a href="javascript:void(0)" className="text-blue-400">Laura Tanenbaum</a>
+                        By <a href="#" className="text-blue-400">Laura Tanenbaum</a>
                       </div>
                       <div className="post-meta-date-box">Sep 22</div>
                     </div>
@@ -46,14 +48,14 @@ const BlogHeroArea = () => {
               >
                 <div className="post-block-style-inner">
                   <div className="post-block-media-wrap">
-                    <a href="post-single.html">
+                    <Link to="/postsinglepage">
                       <img src="/assets/02.png" alt="Post title" className="w-full h-64 object-cover" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="post-block-content-wrap p-4">
                     <div className="post-item-title">
                       <h2 className="post-title text-xl font-semibold">
-                        <a href="post-single.html">Georgia’s voting law will make elections easier than ever</a>
+                        <Link to="/postsinglepage">Georgia’s voting law will make elections easier than ever</Link>
                       </h2>
                     </div>
                     <div className="post-excerpt-box my-2 text-gray-300">
@@ -61,7 +63,7 @@ const BlogHeroArea = () => {
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <a href="javascript:void(0)" className="text-blue-400">Laura Tanenbaum</a>
+                        By <a href="#" className="text-blue-400">Laura Tanenbaum</a>
                       </div>
                       <div className="post-meta-date-box">Sep 22</div>
                     </div>
@@ -83,22 +85,22 @@ const BlogHeroArea = () => {
               >
                 <div className="post-block-style-inner post-block-list-style-inner">
                   <div className="post-block-media-wrap">
-                    <a href="post-single.html">
+                    <Link to="/postsinglepage">
                       <img src="/assets/01.png" alt="Post title" className="w-full h-45 object-cover" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="post-block-content-wrap p-4">
                     <div className="post-category-box mb-1">
-                      <a className="post-cat-item text-blue-400" href="blog-category.html">Politics</a>
+                      <a className="post-cat-item text-blue-400" href="/blog-category">Politics</a>
                     </div>
                     <div className="post-item-title">
                       <h2 className="post-title text-lg font-semibold">
-                        <a href="post-single.html">Corporations Are People, Too</a>
+                        <Link to="/postsinglepage">Corporations Are People, Too</Link>
                       </h2>
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        <a href="javascript:void(0)" className="text-blue-400">Alisson</a>
+                        <a href="#" className="text-blue-400">Alisson</a>
                       </div>
                       <div className="post-meta-date-box">Sep 22</div>
                     </div>
@@ -109,6 +111,7 @@ const BlogHeroArea = () => {
           </div>
         </div>
       </div>
+      <SectionDivider />
     </section>
   );
 };

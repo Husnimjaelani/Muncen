@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from './Pages/Home';
+import Home from './Pages/HomePage';
+import PostSinglePage from './Pages/PostSinglePage';
+import ContactPage from './Pages/ContactPage';
+import LandingPage from './Pages/LandingPage';
 import 'remixicon/fonts/remixicon.css';
 
 
@@ -9,7 +12,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/postsinglepage' element={<PostSinglePage />} />
+        <Route path='/Contact' element={<ContactPage />} />
       </Routes>
     </Router>
   );
