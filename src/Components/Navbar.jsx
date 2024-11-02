@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import OffCanvas from './OffCanvas'; // Pastikan Anda telah membuat komponen OffCanvas
+import OffCanvas from './OffCanvas'; 
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
