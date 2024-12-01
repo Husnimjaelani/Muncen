@@ -61,7 +61,7 @@ const PopularPosts = () => {
 
   return (
     <section className="popular-posts-column-area mt-20 mb-35">
-      <div className="container mx-auto">
+      <div className="container mx-auto mb-16">
         <div className="section-title">
           <h2 className="title-block text-white">Popular Posts</h2>
         </div>
