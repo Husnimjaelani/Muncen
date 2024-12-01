@@ -80,7 +80,7 @@ const Navbar = () => {
                 </div>
               </div>
               {/* Subscribe Button */}
-              <Link to="/subscribe" className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">
+              <Link to="/subscribe" className="px-4 py-2 text-white bg-gradient-to-r from-blue-500 to-red-500 rounded-full hover:from-blue-600 hover:to-red-600 transition duration-300">
                 Subscribe
               </Link>
               {/* Hamburger Menu */}
