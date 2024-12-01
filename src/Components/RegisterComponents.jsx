@@ -41,7 +41,7 @@ const RegisterPage = ({ isOpen, onClose }) => {
                                 Username
                             </label>
                             <input
-                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-black leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 id="username"
                                 type="text"
                                 placeholder="Masukkan Username Anda"
@@ -55,7 +55,7 @@ const RegisterPage = ({ isOpen, onClose }) => {
                                 Email Address
                             </label>
                             <input
-                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-black leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 id="email"
                                 type="email"
                                 placeholder="Masukkan Email Anda"
@@ -69,7 +69,7 @@ const RegisterPage = ({ isOpen, onClose }) => {
                                 Password
                             </label>
                             <input
-                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-black leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
                                 id="password"
                                 type={showPassword ? "text" : "password"}
                                 placeholder="********"
@@ -78,8 +78,8 @@ const RegisterPage = ({ isOpen, onClose }) => {
                             />
                             <button 
                                 type="button" 
-                                className="absolute inset-y-0 right-3 flex items-center"
-                                style={{ top: '50%', transform: 'translateY(-50%)' }} 
+                                className="absolute inset-y-0 right-4 flex text-black items-center"
+                                style={{ top: '50%', transform: 'translateY(-15%)' }} 
                                 onClick={togglePasswordVisibility}
                                 aria-label="Toggle password visibility"
                             >
@@ -92,7 +92,7 @@ const RegisterPage = ({ isOpen, onClose }) => {
                                 Confirm Password
                             </label>
                             <input
-                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-black leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
                                 id="confirm-password"
                                 type={showConfirmPassword ? "text" : "password"}
                                 placeholder="********"
@@ -100,8 +100,8 @@ const RegisterPage = ({ isOpen, onClose }) => {
                             />
                             <button 
                                 type="button" 
-                                className="absolute inset-y-0 right-3 flex items-center"
-                                style={{ top: '50%', transform: 'translateY(-50%)' }} 
+                                className="absolute inset-y-0 right-4 flex items-center text-black"
+                                style={{ top: '50%', transform: 'translateY(-15%)' }} 
                                 onClick={toggleConfirmPasswordVisibility}
                                 aria-label="Toggle confirm password visibility"
                             >

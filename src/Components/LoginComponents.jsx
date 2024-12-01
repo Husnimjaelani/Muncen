@@ -36,7 +36,7 @@ const LoginPage = ({ isOpen, onClose }) => {
                                 Username
                             </label>
                             <input
-                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-black leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 id="username"
                                 type="text"
                                 placeholder="Masukkan Username Anda"
@@ -50,7 +50,7 @@ const LoginPage = ({ isOpen, onClose }) => {
                                 Password
                             </label>
                             <input
-                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+                                className="shadow-md appearance-none border rounded-lg w-full py-3 px-4 text-black leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
                                 id="password"
                                 type={showPassword ? "text" : "password"}
                                 placeholder="********"
@@ -59,8 +59,8 @@ const LoginPage = ({ isOpen, onClose }) => {
                             />
                             <button 
                                 type="button" 
-                                className="absolute inset-y-0 right-3 flex items-center"
-                                style={{ top: '50%', transform: 'translateY(-50%)' }} 
+                                className="absolute inset-y-0 right-4 text-black flex items-center"
+                                style={{ top: '50%', transform: 'translateY(-15%)' }} 
                                 onClick={togglePasswordVisibility}
                                 aria-label="Toggle password visibility"
                             >
