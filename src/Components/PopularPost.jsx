@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PopularPosts = () => {
   const posts = [
@@ -72,14 +73,14 @@ const PopularPosts = () => {
             >
               <div className="post-block-style-inner">
                 <div className="post-block-media-wrap">
-                  <a href={post.link}>
+                  <Link href={post.link}>
                     <img src={post.image} alt={post.title} className="w-full h-45 object-cover" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="post-block-content-wrap p-4">
                   <div className="post-item-title">
                     <h2 className="post-title text-lg font-semibold">
-                      <a href={post.link}>{post.title}</a>
+                      <Link href={post.link}>{post.title}</Link>
                     </h2>
                   </div>
                   <div className="post-excerpt-box">
@@ -87,7 +88,7 @@ const PopularPosts = () => {
                   </div>
                   <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                     <div className="post-meta-author-box">
-                      By <a href="javascript:void(0)" className="text-blue-400">{post.author}</a>
+                      By <Link to="" className="text-blue-400">{post.author}</Link>
                     </div>
                     <div className="post-meta-date-box">{post.date}</div>
                   </div>

@@ -27,8 +27,6 @@ const Home = () => {
       <PopularPostsArea />
       <VidioPostArea />
       <PopularPosts />
-
-
       </MainWrapper>
       <Footer /> 
     </div>

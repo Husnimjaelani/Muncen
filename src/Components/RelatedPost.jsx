@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RelatedPosts = () => {
   const posts = [
@@ -39,14 +40,14 @@ const RelatedPosts = () => {
               <article className="post-block-style-wrapper post-block-template-one post-block-template-medium">
                 <div className="post-block-style-inner">
                   <div className="post-block-media-wrap">
-                    <a href="#">
+                    <Link href="#">
                       <img src={post.image} alt="Post title" className="w-full h-auto rounded-lg" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="post-block-content-wrap">
                     <div className="post-item-title">
                       <h2 className="post-title">
-                        <a href="#" className="text-lg font-semibold text-white hover:text-blue-500">{post.title}</a>
+                        <Link href="#" className="text-lg font-semibold text-white hover:text-blue-500">{post.title}</Link>
                       </h2>
                     </div>
                     <div className="post-excerpt-box">
@@ -54,7 +55,7 @@ const RelatedPosts = () => {
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-4 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <a href="#" className="hover:text-blue-500">{post.author}</a>
+                        By <Link to="#" className="hover:text-blue-500">{post.author}</Link>
                       </div>
                       <div className="post-meta-date-box">
                         {post.date}

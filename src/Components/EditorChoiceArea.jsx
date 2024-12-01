@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EditorChoiceArea = () => {
   const todaysPickData = [
@@ -46,7 +47,7 @@ const EditorChoiceArea = () => {
           {/* Kolom Kiri - Todays Pick */}
           <div className="lg:w-1/3 w-full p-5">
             <div className="section-title mb-5">
-              <h2 className="title-block text-white">Todays Pick</h2>
+              <h2 className="title-block text-white text-bold">Todays Pick</h2>
             </div>
             <div className="post-block-template-three-wrapper">
               {todaysPickData.map((post) => (
@@ -61,12 +62,12 @@ const EditorChoiceArea = () => {
                     <div className="post-block-content-wrap">
                       <div className="post-item-title">
                         <h2 className="post-title text-xl font-semibold">
-                          <a href="post-single.html" className="text-white hover:text-blue-400">{post.title}</a>
+                          <Link href="post-single.html" className="text-white hover:text-blue-400">{post.title}</Link>
                         </h2>
                       </div>
                       <div className="post-bottom-meta-list flex justify-start mt-2 gap-4 text-sm text-gray-400 mb-2">
                         <div className="post-meta-author-box">
-                          By <a href="#" className="text-blue-400">{post.author}</a>
+                          By <Link href="#" className="text-blue-400">{post.author}</Link>
                         </div>
                         <div className="post-meta-date-box">{post.date}</div>
                       </div>
@@ -87,18 +88,18 @@ const EditorChoiceArea = () => {
                 <div key={index} className="w-full md:w-1/2 px-4 mb-8">
                   <article className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden">
                     <div className="post-block-media-wrap">
-                      <a href="post-single.html">
+                      <Link href="post-single.html">
                         <img
                           src={`/assets/${post.image}`}
                           alt={post.title}
                           className="w-full h-65 object-cover"
                         />
-                      </a>
+                      </Link>
                     </div>
                     <div className="post-block-content-wrap p-4">
                       <div className="post-item-title">
                         <h2 className="post-title text-xl font-semibold">
-                          <a href="post-single.html" className="hover:text-blue-400">{post.title}</a>
+                          <Link href="post-single.html" className="hover:text-blue-400">{post.title}</Link>
                         </h2>
                       </div>
                       <div className="post-excerpt-box my-2 text-gray-300">
@@ -106,7 +107,7 @@ const EditorChoiceArea = () => {
                       </div>
                       <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                         <div className="post-meta-author-box">
-                          By <a href="#" className="text-blue-400">{post.author}</a>
+                          By <Link href="#" className="text-blue-400">{post.author}</Link>
                         </div>
                         <div className="post-meta-date-box">{post.date}</div>
                       </div>

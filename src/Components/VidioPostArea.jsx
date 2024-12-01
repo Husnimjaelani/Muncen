@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FeaturedVideos = () => {
   const videos = [
@@ -47,21 +48,21 @@ const FeaturedVideos = () => {
               <div className="post-block-style-inner">
                 <div className="post-block-video-thumb relative">
                   <div className="post-block-media-wrap">
-                    <a href={videos[0].link}>
+                    <Link to={videos[0].link}>
                       <img src={videos[0].image} alt="Post title" className="w-full h-auto rounded-lg" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="video-play-icon-wrap absolute inset-0 flex items-center justify-center">
-                    <a href={videos[0].link} className="theme-play-btn video-play-btn text-3xl text-white">
+                    <Link to={videos[0].link} className="theme-play-btn video-play-btn text-3xl text-white">
                       {/* You can add an icon here */}
                       ▶
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="post-block-content-wrap mt-4">
                   <div className="post-item-title">
                     <h2 className="post-title text-lg font-semibold">
-                      <a href={videos[0].link}>{videos[0].title}</a>
+                      <Link to={videos[0].link}>{videos[0].title}</Link>
                     </h2>
                   </div>
                   <div className="post-excerpt-box">
@@ -73,25 +74,25 @@ const FeaturedVideos = () => {
           </div>
           <div className="lg:w-1/3">
             <div className="section-btn text-right mb-4">
-              <a href="post-single.html" className="text-blue-500 font-bold"><span>+</span> See All Videos</a>
+              <Link to="post-single.html" className="text-blue-500 font-bold"><span>+</span> See All Videos</Link>
             </div>
             {videos.slice(1).map((video) => (
               <article key={video.id} className="post-block-style-wrapper post-block-template-two post-video-list mb-4">
                 <div className="post-block-style-inner post-block-list-style-inner flex">
                   <div className="post-block-media-wrap">
-                    <a href={video.link}>
+                    <Link to={video.link}>
                       <img src={video.image} alt="Post title" className="w-16 h-16 rounded-lg" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="post-block-content-wrap ml-4 flex-grow">
                     <div className="post-item-title">
                       <h2 className="post-title">
-                        <a href={video.link}>{video.title}</a>
+                        <Link to={video.link}>{video.title}</Link>
                       </h2>
                     </div>
                     <div className="post-bottom-meta-list flex justify-between text-sm text-gray-500">
                       <div className="post-meta-author-box">
-                        <a href="javascript:void(0)">{video.author}</a>
+                        <Link to="">{video.author}</Link>
                       </div>
                       <div className="post-meta-date-box">
                         {video.date}

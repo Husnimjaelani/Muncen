@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,16 +10,16 @@ const Footer = () => {
             <div className="w-full lg:w-1/4 ">
               <div className="footer-widget">
                 <div className="footer-logo">
-                  <a href="index.html">
+                  <Link href="index.html">
                     <img src="assets/01.png" alt="Logo" />
-                  </a>
+                  </Link>
                 </div>
                 <p className="mt-4">The stars will never align, and the traffic lights of life will never all be green at the same time.</p>
                 <div className="footer-social mt-4">
-                  <a href="#" className="mr-2"><i className="icofont-facebook"></i></a>
-                  <a href="#" className="mr-2"><i className="icofont-twitter"></i></a>
-                  <a href="#" className="mr-2"><i className="icofont-instagram"></i></a>
-                  <a href="#"><i className="icofont-linkedin"></i></a>
+                  <Link href="#" className="mr-2"><i className="icofont-facebook"></i></Link>
+                  <Link href="#" className="mr-2"><i className="icofont-twitter"></i></Link>
+                  <Link href="#" className="mr-2"><i className="icofont-instagram"></i></Link>
+                  <Link href="#"><i className="icofont-linkedin"></i></Link>
                 </div>
               </div>
             </div>
@@ -26,11 +27,11 @@ const Footer = () => {
               <div className="footer-widget">
                 <h4 className="widget-title">Resources</h4>
                 <ul className="menu space-y-2 mt-4">
-                  <li><a href="javascript:void(0)">What’s New</a></li>
-                  <li><a href="javascript:void(0)">Developers</a></li>
-                  <li><a href="javascript:void(0)">Releases</a></li>
-                  <li><a href="javascript:void(0)">Support</a></li>
-                  <li><a href="javascript:void(0)">Cookie Policy</a></li>
+                  <li><Link href="">What’s New</Link></li>
+                  <li><Link href="">Developers</Link></li>
+                  <li><Link href="">Releases</Link></li>
+                  <li><Link href="">Support</Link></li>
+                  <li><Link href="">Cookie Policy</Link></li>
                 </ul>
               </div>
             </div>
@@ -38,11 +39,11 @@ const Footer = () => {
               <div className="footer-widget">
                 <h4 className="widget-title">Useful Links</h4>
                 <ul className="menu space-y-2 mt-4">
-                  <li><a href="javascript:void(0)">What’s New</a></li>
-                  <li><a href="javascript:void(0)">Developers</a></li>
-                  <li><a href="javascript:void(0)">Releases</a></li>
-                  <li><a href="javascript:void(0)">Support</a></li>
-                  <li><a href="javascript:void(0)">Cookie Policy</a></li>
+                  <li><Link href="">What’s New</Link></li>
+                  <li><Link href="">Developers</Link></li>
+                  <li><Link href="">Releases</Link></li>
+                  <li><Link href="">Support</Link></li>
+                  <li><Link href="">Cookie Policy</Link></li>
                 </ul>
               </div>
             </div>
@@ -84,8 +85,8 @@ const Footer = () => {
             </div>
             <div className="footer-menu">
               <ul className="flex space-x-4">
-                <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                <li><a href="javascript:void(0)">Terms of Use</a></li>
+                <li><Link href="">Privacy Policy</Link></li>
+                <li><Link href="">Terms of Use</Link></li>
               </ul>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ArticlesGridSection = () => {
   const articles = [
@@ -42,19 +43,19 @@ const ArticlesGridSection = () => {
                 <article key={index} className="post-block-style-wrapper post-block-template-one post-block-template-small">
                   <div className="post-block-style-inner bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                     <div className="post-block-media-wrap">
-                      <a href={article.link}>
+                      <Link href={article.link}>
                         <img src={article.image} alt="Post title" className="w-full h-auto" />
-                      </a>
+                      </Link>
                     </div>
                     <div className="post-block-content-wrap p-4">
                       <div className="post-item-title">
                         <h2 className="post-title text-lg font-semibold">
-                          <a href={article.link} className="hover:text-blue-400">{article.title}</a>
+                          <Link href={article.link} className="hover:text-blue-400">{article.title}</Link>
                         </h2>
                       </div>
                       <div className="post-bottom-meta-list flex justify-between text-sm text-gray-400 mt-2">
                         <div className="post-meta-author-box">
-                          By <a href="javascript:void(0)" className="text-blue-400">{article.author}</a>
+                          By <Link to="" className="text-blue-400">{article.author}</Link>
                         </div>
                         <div className="post-meta-date-box">{article.date}</div>
                       </div>

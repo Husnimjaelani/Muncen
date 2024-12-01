@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './Sidebar'; // Perbaiki penamaan komponen
+import Sidebar from './SidebarComponents';
 import Breadcrumb from './Notification/BreadCrump'; // Perbaiki penamaan Breadcrumb
 
 const PageContent = () => {
@@ -18,6 +18,7 @@ const PageContent = () => {
                   aria-label="Ridgeland"
                   loading="lazy"
                   className="w-full h-64"
+                  title='example'
                 ></iframe>
               </div>
               <div className="theme-blog-details space-y-6">

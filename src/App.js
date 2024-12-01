@@ -5,6 +5,7 @@ import Home from './Pages/HomePage';
 import PostSinglePage from './Pages/PostSinglePage';
 import ContactPage from './Pages/ContactPage';
 import LandingPage from './Pages/LandingPage';
+import LoginPage from './Components/LoginComponents';
 import 'remixicon/fonts/remixicon.css';
 
 
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<LandingPage />} />
+        <Route path='/login' element={<LoginPage />} />
         <Route path='/home' element={<Home />} />
         <Route path='/postsinglepage' element={<PostSinglePage />} />
         <Route path='/Contact' element={<ContactPage />} />

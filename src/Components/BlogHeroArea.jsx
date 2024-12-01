@@ -29,7 +29,7 @@ const BlogHeroArea = () => {
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <a href="#" className="text-blue-400">Laura Tanenbaum</a>
+                        By <Link href="#" className="text-blue-400">Laura Tanenbaum</Link>
                       </div>
                       <div className="post-meta-date-box">Sep 22</div>
                     </div>
@@ -63,7 +63,7 @@ const BlogHeroArea = () => {
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        By <a href="#" className="text-blue-400">Laura Tanenbaum</a>
+                        By <Link href="#" className="text-blue-400">Laura Tanenbaum</Link>
                       </div>
                       <div className="post-meta-date-box">Sep 22</div>
                     </div>
@@ -91,7 +91,7 @@ const BlogHeroArea = () => {
                   </div>
                   <div className="post-block-content-wrap p-4">
                     <div className="post-category-box mb-1">
-                      <a className="post-cat-item text-blue-400" href="/blog-category">Politics</a>
+                      <Link className="post-cat-item text-blue-400" href="/blog-category">Politics</Link>
                     </div>
                     <div className="post-item-title">
                       <h2 className="post-title text-lg font-semibold">
@@ -100,7 +100,7 @@ const BlogHeroArea = () => {
                     </div>
                     <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                       <div className="post-meta-author-box">
-                        <a href="#" className="text-blue-400">Alisson</a>
+                        <Link href="#" className="text-blue-400">Alisson</Link>
                       </div>
                       <div className="post-meta-date-box">Sep 22</div>
                     </div>

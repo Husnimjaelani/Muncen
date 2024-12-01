@@ -13,7 +13,6 @@ const PostSinglePage = () => {
         <Navbar />
         <PostSingleArea />
         <RelatedPosts />
-
         </MainWrapper>
         <Footer />
     </div>

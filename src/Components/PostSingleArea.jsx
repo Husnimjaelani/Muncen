@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import Sidebar from './Sidebar';
+import Sidebar from './SidebarComponents';
+import {Link} from 'react-router-dom'
 
 const PostSingleArea = () => {
   return (
@@ -11,23 +12,22 @@ const PostSingleArea = () => {
           <div className="w-full lg:w-2/3 p-6"> {/* Menambah padding untuk layar besar */}
             <div className="post-single-wrapper">
               <div className="post-cat-box mb-4">
-                <a href="#" className="text-blue-500">Politics</a>
+                <Link to="#" className="text-blue-500">Politics</Link>
               </div>
               <h1 className="text-4xl font-bold mb-6">Georgia's voting law will make elections easier than ever</h1>
               <p className="mb-4">Tuesday's primary is the first big test of the legislation...</p>
               <div className="flex items-center justify-between mb-6">
                 <div className="flex space-x-4">
-                  <span>By <a href="#" className="text-blue-500">Laura Tanenbaum</a></span>
+                  <span>By <Link to="#" className="text-blue-500">Laura Tanenbaum</Link></span>
                   <span>Sep 22</span>
                 </div>
                 <div className="flex space-x-2">
-                  <a href="#"><FaFacebookF /></a>
-                  <a href="#"><FaTwitter /></a>
-                  <a href="#"><FaLinkedinIn /></a>
+                  <Link href="#"><FaFacebookF /></Link>
+                  <Link href="#"><FaTwitter /></Link>
+                  <Link href="#"><FaLinkedinIn /></Link>
                 </div>
               </div>
-              <img className="w-full mb-8 rounded-lg" src="/assets/01.png" alt="Post Image" />
-
+              <img className="w-full mb-8 rounded-lg" src="/assets/01.png" alt="A beautiful album" />
               <div className="theme-blog-details space-y-6">
                 <p>Struggling to sell one multi-million dollar home currently on the market...</p>
                 <blockquote className="border-l-4 pl-4 italic">“Most of us felt like we could trust each other...”</blockquote>
@@ -50,9 +50,9 @@ const PostSingleArea = () => {
                   <h5 className="font-bold">Kristin Watson</h5>
                   <p>Sr. UX Designer</p>
                   <div className="flex space-x-2">
-                    <a href="#"><FaFacebookF /></a>
-                    <a href="#"><FaTwitter /></a>
-                    <a href="#"><FaLinkedinIn /></a>
+                    <Link href="#"><FaFacebookF /></Link>
+                    <Link href="#"><FaTwitter /></Link>
+                    <Link href="#"><FaLinkedinIn /></Link>
                   </div>
                 </div>
               </div>

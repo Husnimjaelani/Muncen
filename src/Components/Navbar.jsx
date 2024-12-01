@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../style/offcanvas.css';
+import OffCanvas from './Notification/OffCanvas';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOffCanvas = () => {
-    setIsOpen(!isOpen); // Mengubah status offcanvas
+    setIsOpen(!isOpen); // Toggle offcanvas
     console.log("Offcanvas", !isOpen);
   };
 
   const handleClose = () => {
-    setIsOpen(false); // Menutup offcanvas
+    setIsOpen(false); // Close offcanvas
   };
 
   return (
@@ -92,68 +92,8 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* OffCanvas Component */}
-      {isOpen && (
-        <div className={`fixed inset-0 z-50 flex ${isOpen ? 'block' : 'hidden'}`}>
-          {/* Background gelap */}
-          <div className="bg-black bg-opacity-50 w-full" onClick={handleClose}></div>
-          
-          {/* OffCanvas yang muncul dari kanan */}
-          <div className={`bg-white w-80 shadow-lg transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-            <div className="tpoffcanvas">
-              <div className="tpoffcanvas__close-btn">
-                <button className="close-btn" onClick={handleClose}>
-                  <i className="icofont-close"></i>
-                </button>
-              </div>
-              <div className="tpoffcanvas__logo offcanvas-logo">
-                <Link to="/" onClick={handleClose}>
-                  <img src="/assets/02.png" alt="Logo" />
-                </Link>
-              </div>
-              <div className="tpoffcanvas__text offcanvas-content">
-                <div className="main-canvas-inner">
-                  <div className="canvas-bar-post-list">
-                    {Array(4).fill().map((_, index) => (
-                      <article key={index} className="post-block-style-wrapper post-block-template-two most-read-block-list">
-                        <div className="post-block-style-inner post-block-list-style-inner">
-                          <div className="post-block-media-wrap">
-                            <Link to="post-single.html" onClick={handleClose}>
-                              <img src={`assets/media/image-${index + 1}.jpg`} alt="Post title" />
-                            </Link>
-                          </div>
-                          <div className="post-block-content-wrap">
-                            <div className="post-item-title">
-                              <h2 className="post-title">
-                                <Link to="post-single.html" onClick={handleClose}>Rachel Maddow Will Go Mondays Only On MSNBC</Link>
-                              </h2>
-                            </div>
-                            <div className="post-bottom-meta-list">
-                              <div className="post-meta-author-box">
-                                <Link to="#" onClick={handleClose}>Cristiano</Link>
-                              </div>
-                              <div className="post-meta-date-box">
-                                Sep 30
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                  <div className="panel-nav-social">
-                    <a href="#" onClick={handleClose}><i className="icofont-facebook"></i></a>
-                    <a href="#" onClick={handleClose}><i className="icofont-twitter"></i></a>
-                    <a href="#" onClick={handleClose}><i className="icofont-instagram"></i></a>
-                    <a href="#" onClick={handleClose}><i className="icofont-linkedin"></i></a>
-                    <a href="#" onClick={handleClose}><i className="icofont-youtube"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* OffCanvas for Mobile Menu */}
+      <OffCanvas isOpen={isOpen} onClose={handleClose} />
     </>
   );
 };

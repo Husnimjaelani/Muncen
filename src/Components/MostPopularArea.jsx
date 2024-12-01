@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MostPopularArea = () => {
   const articles = [
@@ -33,14 +34,14 @@ const MostPopularArea = () => {
                 <article key={index} className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <div className="post-block-style-inner">
                     <div className="post-block-media-wrap">
-                      <a href="post-single.html">
+                      <Link href="post-single.html">
                         <img src={article.image} alt={article.title} className="w-full h-70 object-cover" />
-                      </a>
+                      </Link>
                     </div>
                     <div className="post-block-content-wrap p-4">
                       <div className="post-item-title">
                         <h2 className="post-title text-2xl font-semibold">
-                          <a href="post-single.html">{article.title}</a>
+                          <Link href="post-single.html">{article.title}</Link>
                         </h2>
                       </div>
                       <div className="post-excerpt-box my-2 text-gray-300">
@@ -48,7 +49,7 @@ const MostPopularArea = () => {
                       </div>
                       <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                         <div className="post-meta-author-box">
-                          By <a href="javascript:void(0)" className="text-blue-400">{article.author}</a>
+                          By <Link to ="" className="text-blue-400">{article.author}</Link>
                         </div>
                         <div className="post-meta-date-box">{article.date}</div>
                       </div>
@@ -67,7 +68,7 @@ const MostPopularArea = () => {
         <div className="post-block-content-wrap p-4 flex-1 flex flex-col justify-center">
           {article.category && (
             <div className="post-category-box mb-1">
-              <a className="post-cat-item text-blue-400" href="blog-category.html">{article.category}</a>
+              <Link className="post-cat-item text-blue-400" href="blog-category.html">{article.category}</Link>
             </div>
           )}
           <div className="post-item-title">
@@ -80,15 +81,15 @@ const MostPopularArea = () => {
           </div>
           <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
             <div className="post-meta-author-box">
-              <a href="javascript:void(0)" className="text-blue-400">{article.author}</a>
+              <Link href="" className="text-blue-400">{article.author}</Link>
             </div>
             <div className="post-meta-date-box">{article.date}</div>
           </div>
         </div>
         <div className="post-block-media-wrap flex items-center justify-center w-1/3"> {/* Menentukan lebar gambar */}
-          <a href="post-single.html">
+          <Link href="post-single.html">
             <img src={article.image} alt={article.title} className="w-full h-auto object-cover" /> {/* Mengubah ukuran gambar */}
-          </a>
+          </Link>
         </div>
       </article>
     ))}

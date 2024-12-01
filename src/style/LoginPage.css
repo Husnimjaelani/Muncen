@@ -1,0 +1,25 @@
+/* Custom animation for modal */
+@keyframes modalFadeIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-modal {
+    animation: modalFadeIn 0.5s ease-out;
+}
+
+/* General styling for inputs, buttons */
+input, button {
+    border-radius: 8px;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}

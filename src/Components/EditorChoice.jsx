@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionDivider from './SectionDevinder';
 
 const articles = [
@@ -59,7 +60,7 @@ const EditorChoiceSection = () => {
                 <div className="post-block-content-wrap p-4 flex-1">
                   <div className="post-item-title">
                     <h2 className="post-title text-xl font-bold text-white mb-2">
-                      <a href={article.link}>{article.title}</a>
+                      <Link href={article.link}>{article.title}</Link>
                     </h2>
                   </div>
                   <div className="post-excerpt-box">
@@ -67,15 +68,15 @@ const EditorChoiceSection = () => {
                   </div>
                   <div className="post-bottom-meta-list flex text-sm mt-2 text-white gap-4">
                     <div className="post-meta-author-box">
-                      By <a href="javascript:void(0)" className="text-blue-400">{article.author}</a>
+                      By <Link href="" className="text-blue-400">{article.author}</Link>
                     </div>
                     <div className="post-meta-date-box">{article.date}</div>
                   </div>
                 </div>
                 <div className="post-block-media-wrap w-full lg:w-1/2"> {/* Gambar diperbesar */}
-                  <a href={article.link}>
+                  <Link href={article.link}>
                     <img src={article.image} alt="Post title" className="w-full rounded-lg object-cover h-65" />
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -90,23 +91,23 @@ const EditorChoiceSection = () => {
             <div key={index} className="mb-8">
               <article className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden">
                 <div className="post-block-media-wrap">
-                  <a href={article.link}>
+                  <Link href={article.link}>
                     <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-65 object-cover" // Ganti h-65 dengan h-48 untuk ukuran yang lebih kecil
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="post-block-content-wrap p-4">
                   <div className="post-item-title">
                     <h2 className="post-title text-xl font-semibold">
-                      <a href={article.link} className="hover:text-blue-400">{article.title}</a>
+                      <Link href={article.link} className="hover:text-blue-400">{article.title}</Link>
                     </h2>
                   </div>
                   <div className="post-bottom-meta-list flex justify-between mt-2 text-sm text-gray-400">
                     <div className="post-meta-author-box">
-                      By <a href="#" className="text-blue-400">{article.author}</a>
+                      By <Link href="#" className="text-blue-400">{article.author}</Link>
                     </div>
                     <div className="post-meta-date-box">{article.date}</div>
                   </div>
