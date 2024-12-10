@@ -20,13 +20,31 @@ const OffCanvas = ({ isOpen, onClose }) => {
               <i className="icofont-close text-2xl"></i>
             </button>
           </div>
-          
-          {/* Logo Centered */}
+           
+          <div
+            className="py-12 px-24 max-w-sm mx-auto bg-cover bg-center rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:flex-col sm:items-center sm:space-y-4 mb-4"
+            style={{ backgroundImage: "url('/assets/01.png')" }}
+          >
+          <img
+            className="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
+            src="https://tailwindcss.com/img/erin-lindford.jpg"
+            alt="Woman's Face"
+          />
+          <div className="text-center sm:text-left space-y-2">
+        <button className="px-4 py-1 mt-3 text-sm text-white font-semibold rounded-full border bg-gradient-to-r from-blue-500 to-red-500 hover:text-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+            Message
+       </button>
+        </div>
+      </div>
+
+
+           
+          {/* Logo Centered
           <div className="flex justify-center items-center px-4 py-8">
             <Link to="/" onClick={onClose}>
               <img src="/assets/01.png" alt="Logo" className="h-15" />
             </Link>
-          </div>
+          </div> */}
 
           {/* Content */}
           <div className="px-4 flex-1 overflow-y-auto">

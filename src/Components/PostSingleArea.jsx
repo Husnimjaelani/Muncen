@@ -1,11 +1,13 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import Sidebar from './SidebarComponents';
+import Breadcrumb from './Notification/BreadCrump';
 import {Link} from 'react-router-dom'
 
 const PostSingleArea = () => {
   return (
     <div className="post-single-area mt-2 text-white">
+      <Breadcrumb />
       <div className="container mx-auto lg:max-w-7xl px-6"> {/* Memperbesar batas lebar untuk layar besar */}
         <div className="flex flex-wrap lg:flex-nowrap gap-8"> {/* Menambahkan gap antar elemen */}
           {/* Blog Content */}

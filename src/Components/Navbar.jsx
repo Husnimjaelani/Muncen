@@ -31,8 +31,8 @@ const Navbar = () => {
               <ul className="flex space-x-6 mt-2 gap-2 font-bold mb-6">
                 <li><Link to="/home" className="text-white hover:text-blue-500 no-underline">Home</Link></li>
                 <li className="relative group">
-                  <button className="text-white hover:text-blue-500">Features</button>
-                  <ul className="absolute left-0 hidden mt-8 space-y-2 bg-white border border-gray-200 rounded-md shadow-lg group-hover:block">
+                  <button className="text-white w-full hover:text-blue-500">Features</button>
+                  <ul className="absolute left-0 w-40 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
                     <li>
                       <Link to="/blog-category" className="block px-4 py-2 text-black hover:text-blue-500 no-underline">Category Page</Link>
                     </li>
@@ -80,7 +80,7 @@ const Navbar = () => {
                 </div>
               </div>
               {/* Subscribe Button */}
-              <Link to="/subscribe" className="px-4 py-2 text-white bg-gradient-to-r from-blue-500 to-red-500 rounded-full hover:from-blue-600 hover:to-red-600 transition duration-300">
+              <Link to="/subscribe" className="px-4 py-2 text-white border bg-gradient-to-r from-blue-500 to-red-500 rounded-full hover:from-blue-600 hover:to-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
                 Subscribe
               </Link>
               {/* Hamburger Menu */}
